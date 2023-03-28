@@ -76,8 +76,15 @@
     .header-search {
         padding: 15px 0px;
     }
+    .homepage_image{
+        margin: 0;
+    }
     #collapseFilter.d-md-block {
         padding: 30px 0px;
+    }
+    .main_logo{
+        height: 60px; 
+        width: 100%;
     }
 }
 
@@ -96,6 +103,9 @@
     }
     .menu-area-main .megamenu .women-cat {
         padding: 0px 15px;
+    }
+    .homepage_image{
+        margin: 0;
     }
     .menu-area-main .megamenu .el-cat {
         padding: 0px 15px;
@@ -124,6 +134,11 @@
     }
     .mean-container .mean-nav ul li a.mean-expand {
         top: 0;
+    }
+    
+    .main_logo{
+        height: 60px; 
+        width: 100%;
     }
 }
 
@@ -238,6 +253,10 @@
     #custom_slider a.carousel-control-next {
         top: 280px;
     }
+    .main_logo{
+        height: 60px; 
+        width: 100%;
+    }
 }
 
 @media (min-width: 576px) and (max-width: 767px) {
@@ -267,6 +286,9 @@
     .online_box {
         width: 100%;
         display: block;
+    }
+    .homepage_image{
+        margin: 0;
     }
     a.navbar-brand {
         width: auto;
@@ -357,6 +379,11 @@
     figure img {
         width: 100%;
     }
+    
+    .main_logo{
+        height: 60px; 
+        width: 100%;
+    }
 }
 
 @media (max-width: 575px) {
@@ -382,6 +409,9 @@
         width: 130px;
         margin: 0 auto;
         text-align: center;
+    }
+    .homepage_image{
+        margin: 0;
     }
     .online_box {
         width: 100%;
@@ -474,6 +504,10 @@
         margin: 0px 14px;
     }
     figure img {
+        width: 100%;
+    }
+    .main_logo{
+        height: 60px; 
         width: 100%;
     }
 }

@@ -248,10 +248,10 @@ a.navbar-brand {
 .navbar-expand-lg .navbar-nav .nav-link {
     padding: 3px 5px;
     font-size: 16px;
+    font-weight: 600;
     color: #fefefd;
     margin: 0px 6px;
     border: 1px solid transparent;
-    border-radius: 5px;
     text-transform: uppercase;
 }
 
@@ -259,14 +259,14 @@ a.navbar-brand {
 .navbar-light .navbar-nav .nav-link.active,
 .navbar-light .navbar-nav .nav-link.show,
 .navbar-light .navbar-nav .show>.nav-link {
-    color: #fefefd;
-    border: 1px solid #fefefd;
+    color: orange;
+    border-bottom: 1px solid #fefefd;
 }
 
 .navbar-light .navbar-nav .nav-link:focus,
 .navbar-light .navbar-nav .nav-link:hover {
-    color: #fefefd;
-    border: 1px solid #fefefd;
+    color: orange;
+    border-bottom: 1px solid #fefefd;
 }
 
 .navbar-brand {
@@ -337,6 +337,7 @@ a.navbar-brand {
     float: left;
     padding-top: 10px;
     margin: 0px;
+    text-align: justify;
 }
 
 .started_bt {
@@ -344,6 +345,16 @@ a.navbar-brand {
     float: left;
     margin-left: 15px;
     margin-top: 30px;
+}
+
+.main_logo{
+    width: 60%;
+    height: 70px;
+    margin: 0 auto;
+}
+
+.homepage_image{
+    margin-left: 60px;
 }
 
 .started_bt a {
@@ -780,7 +791,7 @@ figure:hover+span {
 .about_text_main {
     width: 100%;
     float: left;
-    padding: 100px 0px;
+    padding: 20px 0px;
 }
 
 .about_taital {
@@ -797,6 +808,7 @@ figure:hover+span {
     font-size: 16px;
     color: #fefefd;
     margin: 30px 0px 0px 0px;
+    text-align: justify;
 }
 
 .about_img {
@@ -968,6 +980,7 @@ textarea#comment::placeholder {
     font-size: 16px;
     color: #001431;
     margin: 20px 0px 0px 0px;
+    text-align: justify;
 }
 
 #my_slider a.carousel-control-prev {
@@ -1189,19 +1202,28 @@ textarea#comment::placeholder {
     float: left;
     background-color: #001431;
     height: auto;
-    padding: 80px 0px 30px 0px;
+    padding: 25px 0px 0px 0px;
 }
 
 .footer_logo {
     width: 100%;
     text-align: center;
-    margin: 40px 0px 0px 0px;
+    margin: 10px 0px 0px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer_image{
+    height: 100px;
+    display: block;
+  margin: auto;
 }
 
 .social_icon {
     width: 100%;
     text-align: center;
-    margin-top: 30px;
+    margin-top: 10px;
 }
 
 .social_icon ul {
