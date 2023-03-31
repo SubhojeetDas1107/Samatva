@@ -1,60 +1,328 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+  <head>
+
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="css/style.css">
-    <title>Path Finder</title>
-</head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <title>Pathfinder || Samatva</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="assets/css/fontawesome.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/animated.css">
+    <link rel="stylesheet" href="assets/css/owl.css">
+  </head>
 
 <body>
-    <div class="layout">
-       <h1>Path Finder</h1>
-       <p>Find A Way Towards Your Destination</p>
-        <h2>Name</h2>
-        <input type="text" name="name" placeholder="Name">
-        <div class="container">
 
-            <h2>Gender</h2>
-
-            <select name="selectoptions">             
-                <option >Male</option>
-                <option >Female</option>
-                <option >Trans Gender</option>
-                <option >Others</option>
-                <option >Prefer Not To Say</option>
-            </select>
-
-        </div>
-
-        <h2>City</h2>
-
-        <select name="selectoptions">             
-	        <option >Delhi</option>
-	        <option >Kolkata</option>
-	        <option >Ragarhat</option>
-	        <option >Behala</option>
-	        <option >Esplanade</option>
-	        <option >Parkstreet</option>
-	        <option >Tollygonge</option>
-        </select>
-
-
-        <h2>Email Address</h2>
-        <input type="email" name="email" placeholder="example@mail.com">
-
-        <h2>Phone Number</h2>
-        <input type="tel" name="PhoneNO" placeholder="+88012345678910">
-
-        <h2>Message</h2>
-        <textarea name="message" id="" cols="10" rows="2" placeholder="Type your message"></textarea>
-        <br> <br>
-        
-        <div class="btn"><input type="button" name="button" value="Check Path"></div>
-        <br>
+  <!-- ***** Preloader Start ***** -->
+  <div id="js-preloader" class="js-preloader">
+    <div class="preloader-inner">
+      <span class="dot"></span>
+      <div class="dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
     </div>
-    
-    
+  </div>
+  <!-- ***** Preloader End ***** -->
+
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area header-sticky wow slideInDown" data-wow-duration="0.75s" data-wow-delay="0s">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <nav class="main-nav">
+            <!-- ***** Logo Start ***** -->
+            <a href="index.html" class="logo">
+              <img src="assets/images/main-logo.png" alt="">
+            </a>
+            <!-- ***** Logo End ***** -->
+            <!-- ***** Menu Start ***** -->
+            <ul class="nav">
+              <li><a href="https://subhojeetdas1107.github.io/Samatva/">Samatva</a></li>
+              <li><a href="#" class="active">Pathfinder</a></li>
+              <li><a href="https://complaint-registeration-yt.vercel.app/">File Complaint</a></li>
+              <li><a href="https://github.com/SubhojeetDas1107/Samatva">Support Us</a></li> 
+              <li><div class="main-white-button"><a href="https://subhojeetdas1107.github.io/Samatva/community/index.html"><i class="fa fa-plus"></i>Join our community</a></div></li> 
+            </ul>        
+            <a class='menu-trigger'>
+                <span>Menu</span>
+            </a>
+            <!-- ***** Menu End ***** -->
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- ***** Header Area End ***** -->
+
+  <div class="main-banner">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="top-text header-text">
+            <h6>We wish everyone a safe journey</h6>
+            <h2>Find The Safest Path To Your Destination</h2>
+          </div>
+        </div>
+        <div class="col-lg-12">
+          <form id="search-form" name="gs" method="submit" role="search" action="#">
+            <div class="row">
+              <div class="col-lg-3 align-self-center">
+                <fieldset>
+                    <input type="address" id="from_location" name="address" class="searchText1" placeholder="Current location" autocomplete="on" required>
+                </fieldset>
+              </div>
+              <div class="col-lg-2 align-self-center">
+                  <fieldset>
+                      <select name="area" class="form-select" aria-label="Area" id="chooseCategory" target="_blank" onchange="this.form.click()">
+                          <option selected>Gender</option>
+                          <option value="Female">Female</option>
+                          <option value="Male">Male</option>
+                          <option value="Transgender">Transgender</option>
+                          <option value="Non-Bianry">Non-Bianry</option>
+                          <option value="Agender">Agender</option>
+                          <option value="Genderqueer">Genderqueer</option>
+                          <option value="Prefer not to say">Prefer not to say</option>
+                      </select>
+                  </fieldset>
+              </div>
+              <div class="col-lg-3 align-self-center">
+                  <fieldset>
+                      <input type="address" id="to_location" name="address" class="searchText" placeholder="Enter Destination" autocomplete="on" required>
+                  </fieldset>
+              </div>
+              <div class="col-lg-2 align-self-center">
+                  <fieldset>
+                      <select name="price" class="form-select" aria-label="Default select example" id="chooseCategory" onchange="this.form.click()">
+                          <option selected>Mode of Transport</option>
+                          <option value="Walk">Walk</option>
+                          <option value="Cycle">Cycle</option>
+                          <option value="Bike/Scooty">Bike/Scooty</option>
+                          <option value="Car">Car</option>
+                          <option value="Bus">Bus</option>
+                      </select>
+                  </fieldset>
+              </div>
+              <div class="col-lg-2">                        
+                  <fieldset>
+                      <button class="main-button" onclick="window.location.href='pathfinder.html';"><i class="fa fa-search"></i> Find</button>
+                  </fieldset>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="col-lg-10 offset-lg-1">
+          <ul class="categories">
+            <li><a href="category.html"><span class="icon"><img src="assets/images/search-icon-01.png" alt="Home"></span> Live access to Family</a></li>
+            <li><a href="listing.html"><span class="icon"><img src="assets/images/search-icon-02.png" alt="Food"></span> Wellbeing &amp; Life</a></li>
+            <li><a href="#"><span class="icon"><img src="assets/images/search-icon-03.png" alt="Vehicle"></span>Ensure Safety </a></li>
+            <li><a href="#"><span class="icon"><img src="assets/images/search-icon-04.png" alt="Shopping"></span> File Complaint</a></li>
+            <li><a href="#"><span class="icon"><img src="assets/images/search-icon-05.png" alt="Travel"></span> Friendly Chatbot</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- 
+  <div class="popular-categories">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="section-heading">
+            <h2>Popular Categories</h2>
+            <h6>Check Them Out</h6>
+          </div>
+        </div>
+        <div class="col-lg-12">
+          <div class="naccs">
+            <div class="grid">
+              <div class="row">
+                <div class="col-lg-3">
+                  <div class="menu">
+                    <div class="first-thumb active">
+                      <div class="thumb">
+                        <span class="icon"><img src="assets/images/search-icon-01.png" alt=""></span>
+                        Apartments
+                      </div>
+                    </div>
+                    <div>
+                      <div class="thumb">                 
+                        <span class="icon"><img src="assets/images/search-icon-02.png" alt=""></span>
+                        Food &amp; Life
+                      </div>
+                    </div>
+                    <div>
+                      <div class="thumb">                 
+                        <span class="icon"><img src="assets/images/search-icon-03.png" alt=""></span>
+                        Cars
+                      </div>
+                    </div>
+                    <div>
+                      <div class="thumb">                 
+                        <span class="icon"><img src="assets/images/search-icon-04.png" alt=""></span>
+                        Shopping
+                      </div>
+                    </div>
+                    <div class="last-thumb">
+                      <div class="thumb">                 
+                        <span class="icon"><img src="assets/images/search-icon-05.png" alt=""></span>
+                        Traveling
+                      </div>
+                    </div>
+                  </div>
+                </div> 
+                <div class="col-lg-9 align-self-center">
+                  <ul class="nacc">
+                    <li class="active">
+                      <div>
+                        <div class="thumb">
+                          <div class="row">
+                            <div class="col-lg-5 align-self-center">
+                              <div class="left-text">
+                                <h4>One Of The Most Trending Stuffs Right Now!</h4>
+                                <p>Plot Listing is a responsive Bootstrap 5 website template that included 4 different HTML pages. This template is provided by TemplateMo website. You can apply this layout for your static or dynamic CMS websites.</p>
+                                <div class="main-white-button"><a href="#"><i class="fa fa-eye"></i> Discover More</a></div>
+                              </div>
+                            </div>
+                            <div class="col-lg-7 align-self-center">
+                              <div class="right-image">
+                                <img src="assets/images/tabs-image-01.jpg" alt="">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div>
+                        <div class="thumb">
+                          <div class="row">
+                            <div class="col-lg-5 align-self-center">
+                              <div class="left-text">
+                                <h4>Food and Lifestyle category is here</h4>
+                                <p>You can feel free to download, edit and apply this template for your website. Please tell your friends about TemplateMo website.</p>
+                                <div class="main-white-button"><a href="#"><i class="fa fa-eye"></i> Explore More</a></div>
+                              </div>
+                            </div>
+                            <div class="col-lg-7 align-self-center">
+                              <div class="right-image">
+                                <img src="assets/images/tabs-image-02.jpg" alt="Foods on the table">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div>
+                        <div class="thumb">
+                          <div class="row">
+                            <div class="col-lg-5 align-self-center">
+                              <div class="left-text">
+                                <h4>Best car rentals for your trips!</h4>
+                                <p>Did you know? You can get the best free HTML templates on Too CSS blog. Visit the blog pages and explore fresh and latest website templates.</p>
+                                <div class="main-white-button"><a href="listing.html"><i class="fa fa-eye"></i> More Listing</a></div>
+                              </div>
+                            </div>
+                            <div class="col-lg-7 align-self-center">
+                              <div class="right-image">
+                                <img src="assets/images/tabs-image-03.jpg" alt="cars in the city">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div>
+                        <div class="thumb">
+                          <div class="row">
+                            <div class="col-lg-5 align-self-center">
+                              <div class="left-text">
+                                <h4>Shopping List: Images from Unsplash</h4>
+                                <p>Image credits go to Unsplash website that provides free stock photos for anyone. Images used in this Plot Listing template are from Unsplash.</p>
+                                <div class="main-white-button"><a href="#"><i class="fa fa-eye"></i> Discover More</a></div>
+                              </div>
+                            </div>
+                            <div class="col-lg-7 align-self-center">
+                              <div class="right-image">
+                                <img src="assets/images/tabs-image-04.jpg" alt="Shopping Girl">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div>
+                        <div class="thumb">
+                          <div class="row">
+                            <div class="col-lg-5 align-self-center">
+                              <div class="left-text">
+                                <h4>Information and Safety Tips for Traveling</h4>
+                                <p>You are allowed to use this template for your commercial websites. You are NOT allowed to redistribute this template ZIP file on any Free CSS collection websites.</p>
+                                <div class="main-white-button"><a rel="nofollow" href="https://templatemo.com/contact"><i class="fa fa-eye"></i> Read More</a></div>
+                              </div>
+                            </div>
+                            <div class="col-lg-7 align-self-center">
+                              <div class="right-image">
+                                <img src="assets/images/tabs-image-05.jpg" alt="Traveling Beach">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>          
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+
+
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="sub-footer">
+            <p>Copyright © 2023 by
+            <br>
+            <a rel="nofollow" href="https://github.com/SubhojeetDas1107/Samatva" title="Samatva">Samatva</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/owl-carousel.js"></script>
+  <script src="assets/js/animation.js"></script>
+  <script src="assets/js/imagesloaded.js"></script>
+  <script src="assets/js/custom.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&libraries=places" defer></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+  <script src="assets/js/pathfinder.js" type="module"></script>
 
 </body>
 
